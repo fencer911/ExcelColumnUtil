@@ -15,7 +15,6 @@ import java.util.Map;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
-
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -24,8 +23,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sargeraswang.util.ExcelUtil.ExcelLogs;
-import com.sargeraswang.util.ExcelUtil.ExcelUtil;
+
 
 
 
@@ -38,7 +36,7 @@ public class ExcelColumnUtil {
 
 	private int headerRowNum=0;
 	private int maxRows=Integer.MAX_VALUE;
-	private static Logger logger = LoggerFactory.getLogger(ExcelUtil.class);
+	private static Logger logger = LoggerFactory.getLogger(ExcelColumnUtil.class);
     private static Map<Class<?>, Integer[]> validateMap = new HashMap<>();
     static {
         validateMap.put(String[].class, new Integer[]{Cell.CELL_TYPE_STRING});
@@ -59,7 +57,7 @@ public class ExcelColumnUtil {
 	
 	//
 	StringBuilder logList = new StringBuilder();
-    public   <T> Collection<T> importExcel(Class<T> clazz, InputStream is, ExcelLogs logs) throws InstantiationException, IllegalAccessException {
+    public   <T> Collection<T> importExcel(Class<T> clazz, InputStream is) throws InstantiationException, IllegalAccessException {
 		Workbook workBook;
 		try {
 			workBook = WorkbookFactory.create(is);

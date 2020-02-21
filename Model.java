@@ -5,8 +5,7 @@
 
 import java.util.Date;
 
-import fencer911.ExcelColumn;
-import fencer911.ExcelColumn.Valid;
+
 
 /**
 
@@ -23,7 +22,8 @@ public class Model {
     @ExcelColumn("出生日期")
     private Date d;
     
-    @ExcelColumn(value="薪水",valid= @Valid(gt=222.0))
+//    @ExcelColumn(value="薪水",valid= @Valid(gt=222.0))
+    @ExcelColumn(value="薪水")
     private Double salary;
     
     @ExcelColumn("发薪日")
