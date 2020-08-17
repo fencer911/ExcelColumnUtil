@@ -1,4 +1,4 @@
-
+package cn.fencer911;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -50,7 +50,7 @@ public @interface ExcelColumn {
          * 
          * @return allowNull
          */
-        boolean allowNull() default true;
+        boolean allowNull() default false;
 
         /**
          * Apply a "greater than" constraint to the named property
